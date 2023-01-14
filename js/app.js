@@ -85,11 +85,11 @@ const buystt = async () => {
 	}
 
   let ethval = document.getElementById("buyinput").value;
-  if(ethval >= 0.01){
+  if(ethval >= 0.0001){
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
-      fresh = "	0x71711E1270c4DEe3d47BbfFC00bbd22137bBfaEe";
+      fresh = "	0xE4dAe441cDa701452092a38d2754Afa02D6832D4";
   sttcontract.methods.buy(fresh).send({from:addr, value: ethval}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
@@ -97,7 +97,7 @@ const buystt = async () => {
   }else{
     Swal.fire(
   'Buy Alert',
-  'Buy as low as 0.01 BNB.',
+  'Buy as low as 0.0001 BNB.',
   'error'
 )
   }
